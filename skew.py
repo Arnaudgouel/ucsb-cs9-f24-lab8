@@ -17,8 +17,6 @@ class SkewMinHeap:
             print("ERROR: Heap is empty.")
         else:
             print(self.root.value)
-            print(self.root.left.value)
-            print(self.root.right.value)
 
     def push(self, value):
         self.root = self.merge(self.root, Node(value))
