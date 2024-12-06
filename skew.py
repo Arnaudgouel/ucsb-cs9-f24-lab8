@@ -49,13 +49,12 @@ class SkewMinHeap:
         if self.root is None:
             print("ERROR: Heap is empty.")
         else:
-
-            print("("+self._recursivePrint(self.root)+")")
+            print(self._recursivePrint(self.root))
 
     def _recursivePrint(self, node):
         if node is None:
             return "-"
         if node.left is None and node.right is None:
             return str(node.value)
-        return self._recursivePrint(node.left) + " " + str(node.value) + " " + self._recursivePrint(node.right)
+        return "(" + self._recursivePrint(node.left) + " " + str(node.value) + " " + self._recursivePrint(node.right) + ")"
         
