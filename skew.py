@@ -7,32 +7,32 @@ class Node:
 class SkewMinHeap:
     def __init__(self):
         self._size = 0
-        self._root = None
+        self.root = None
 
     def count(self):
         print(self._size)
 
     def top(self):
-        if self._root is None:
+        if self.root is None:
             print("ERROR: Heap is empty.")
         else:
-            print(self._root.value)
-            print(self._root.left.value)
-            print(self._root.right.value)
+            print(self.root.value)
+            print(self.root.left.value)
+            print(self.root.right.value)
 
     def push(self, value):
-        self._root = self._merge(self._root, Node(value))
+        self.root = self.merge(self.root, Node(value))
         self._size += 1
 
     def pop(self):
-        if self._root is None:
+        if self.root is None:
             print("ERROR: Heap is empty.")
         else:
-            print(self._root.value)
-            self._root = self._merge(self._root.left, self._root.right)
+            print(self.root.value)
+            self.root = self.merge(self.root.left, self.root.right)
             self._size -= 1
 
-    def _merge(self, leftTree, rightTree):
+    def merge(self, leftTree, rightTree):
         if leftTree is None:
             return rightTree
         if rightTree is None:
@@ -41,16 +41,16 @@ class SkewMinHeap:
         if leftTree.value > rightTree.value:
             leftTree, rightTree = rightTree, leftTree
 
-        leftTree.right = self._merge(leftTree.right, rightTree)
         leftTree.left, leftTree.right = leftTree.right, leftTree.left
+        leftTree.right = self.merge(rightTree, leftTree.right)
         return leftTree
     
     def print(self):
-        if self._root is None:
+        if self.root is None:
             print("ERROR: Heap is empty.")
         else:
 
-            print("("+self._recursivePrint(self._root)+")")
+            print("("+self._recursivePrint(self.root)+")")
 
     def _recursivePrint(self, node):
         if node is None:

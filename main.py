@@ -44,5 +44,5 @@ def topHeapTree():
 
 def handleEmptyHeapTree():
     print("ERROR: Heap is empty.")
-
-main()
+if __name__ == "__main__":
+    main()
