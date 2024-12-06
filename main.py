@@ -25,10 +25,10 @@ def handleInput(line):
         return
 
 def countHeapTree():
-    heap.count()
+    print(heap.count())
 
 def popHeapTree():
-    heap.pop()
+    print(heap.pop())
 
 def printHeapTree():
     heap.print()
@@ -40,7 +40,7 @@ def pushIntoHeapTree(line):
     heap.push(line)
 
 def topHeapTree():
-    heap.top()
+    print(heap.top())
 
 def handleEmptyHeapTree():
     print("ERROR: Heap is empty.")

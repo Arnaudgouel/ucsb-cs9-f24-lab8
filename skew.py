@@ -10,13 +10,13 @@ class SkewMinHeap:
         self.root = None
 
     def count(self):
-        print(self._size)
+        return self._size
 
     def top(self):
         if self.root is None:
-            print("ERROR: Heap is empty.")
+            return "ERROR: Heap is empty."
         else:
-            print(self.root.value)
+            return self.root.value
 
     def push(self, value):
         self.root = self.merge(self.root, Node(value))
@@ -24,11 +24,12 @@ class SkewMinHeap:
 
     def pop(self):
         if self.root is None:
-            print("ERROR: Heap is empty.")
+            return "ERROR: Heap is empty."
         else:
-            print(self.root.value)
+            temp = self.root.value
             self.root = self.merge(self.root.left, self.root.right)
             self._size -= 1
+            return temp
 
     def merge(self, leftTree, rightTree):
         if leftTree is None:
@@ -44,10 +45,7 @@ class SkewMinHeap:
         return leftTree
     
     def print(self):
-        if self.root is None:
-            print("ERROR: Heap is empty.")
-        else:
-            print(self._recursivePrint(self.root))
+        print(self._recursivePrint(self.root))
 
     def _recursivePrint(self, node):
         if node is None:
