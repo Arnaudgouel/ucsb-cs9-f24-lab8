@@ -37,7 +37,7 @@ def pushIntoHeapTree(line):
     if len(line) == 1:
         print("ERROR: No argument.")
         return
-    line = line[1]
+    line = line[1].strip()
     heap.push(line)
 
 def topHeapTree():

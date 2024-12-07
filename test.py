@@ -5,6 +5,8 @@ heap = SkewMinHeap()
 heap.push("A")
 heap.push("B")
 heap.push("C")
+heap.push("D")
+heap.push("E")
 
 print("Count:", heap.count())  # Should be 3
 print("Top value:", heap.top())  # Should be "A"
