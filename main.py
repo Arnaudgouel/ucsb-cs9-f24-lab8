@@ -7,7 +7,7 @@ def main():
         handleInput(line)
 
 def handleInput(line):
-    line = line.strip().split()
+    line = line.strip().split(" ", maxsplit=1)
     if len(line) == 0:
         return
     firstArgument = line[0]
@@ -36,7 +36,8 @@ def printHeapTree():
 def pushIntoHeapTree(line):
     if len(line) == 1:
         print("ERROR: No argument.")
-    line = " ".join(line[1:])
+        return
+    line = line[1]
     heap.push(line)
 
 def topHeapTree():
