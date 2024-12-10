@@ -90,7 +90,8 @@ class SkewMinHeap:
         current = result
         while current:
             next = current.left
-            current.left, current.right = current.right, current.left
+            current.left = current.right
+            current.right = next
             current = next
 
         return result
